@@ -25,7 +25,7 @@ public class InstructorUseCase implements IInstructorServicePort {
     }
 
     @Override
-    public Instructor getInstructor(String nameInstructor) {
+    public Instructor getInstructor(Long instructorId) {
         return null;
     }
 

@@ -25,7 +25,7 @@ public class CourseUseCase implements ICourseServicePort {
     }
 
     @Override
-    public Course getCourse(String nameCourse) {
+    public Course getCourse(Long courseId) {
         return null;
     }
 

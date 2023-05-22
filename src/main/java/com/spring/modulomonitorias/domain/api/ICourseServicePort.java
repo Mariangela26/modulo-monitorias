@@ -10,7 +10,7 @@ public interface ICourseServicePort {
 
     List<Course> getAllCourse();
 
-    Course getCourse(String nameCourse);
+    Course getCourse(Long courseId);
 
     void updateCourse(Course course);
 

@@ -10,7 +10,7 @@ public interface ICoursePersistencePort {
 
     List<Course> getAllCourse();
 
-    Course getCourse(String nameCourse);
+    Course getCourse(Long courseId);
 
     void updateCourse(Course course);
 

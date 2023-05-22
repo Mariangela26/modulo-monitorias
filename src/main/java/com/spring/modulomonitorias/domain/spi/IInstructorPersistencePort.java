@@ -9,7 +9,7 @@ public interface IInstructorPersistencePort {
 
     List<Instructor> getAllInstructor();
 
-    Instructor getInstructor(String nameInstructor);
+    Instructor getInstructor(Long instructorId);
 
     void updateInstructor (Instructor instructor);
 
