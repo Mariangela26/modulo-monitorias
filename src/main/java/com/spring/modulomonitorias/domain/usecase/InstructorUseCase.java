@@ -16,26 +16,30 @@ public class InstructorUseCase implements IInstructorServicePort {
 
     @Override
     public Instructor saveInstructor(Instructor instructor) {
-        return null;
+
+        return instructorPersistencePort.saveInstructor(instructor);
     }
 
     @Override
     public List<Instructor> getAllInstructor() {
-        return null;
+        return instructorPersistencePort.getAllInstructor();
     }
 
     @Override
     public Instructor getInstructor(Long instructorId) {
-        return null;
+
+        return instructorPersistencePort.getInstructor(instructorId);
     }
 
     @Override
     public void updateInstructor(Instructor instructor) {
 
+        instructorPersistencePort.updateInstructor(instructor);
     }
 
     @Override
     public void deleteInstructor(Long instructorId) {
 
+        instructorPersistencePort.deleteInstructor(instructorId);
     }
 }

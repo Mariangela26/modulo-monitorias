@@ -1,0 +1,32 @@
+server:
+  #aqui se debe cambiar el puerto, por el especifico de cada micro
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  jpa:
+    showSql: true
+    ddlAuto: create
+
+spring.messages.basename: lang/messages
+spring.messages.encoding: UTF-8
+
+jwt:
+  secretKey: ${KEYSECRET_SECURITY:SjLNct19ONkWJIw4OW4EFz8V8KUNLiQ9CU_We2nUsLg}
+  prefix: ${PREFIX_SECURITY:Bearer}
+  expiraInDays: ${EXPIRA_DAYS_SECURITY:14}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: info
+

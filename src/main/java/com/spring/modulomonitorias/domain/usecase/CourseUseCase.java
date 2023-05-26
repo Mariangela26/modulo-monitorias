@@ -16,26 +16,31 @@ public class CourseUseCase implements ICourseServicePort {
 
     @Override
     public Course saveCourse(Course course) {
-        return null;
+
+        return coursePersistencePort.saveCourse(course);
     }
 
     @Override
     public List<Course> getAllCourse() {
-        return null;
+
+        return coursePersistencePort.getAllCourse();
     }
 
     @Override
     public Course getCourse(Long courseId) {
-        return null;
+
+        return coursePersistencePort.getCourse(courseId);
     }
 
     @Override
     public void updateCourse(Course course) {
 
+        coursePersistencePort.updateCourse(course);
     }
 
     @Override
     public void deleteCourse(Long courseId) {
 
+        coursePersistencePort.deleteCourse(courseId);
     }
 }

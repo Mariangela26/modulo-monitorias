@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
+
 @Entity
 @Table(name="schedule")
 @NoArgsConstructor
@@ -20,4 +23,8 @@ public class ScheduleEntity {
     private String startTime;
     private String endTime;
     private String place;
+
+    @OneToMany
+    @JoinColumn(name = "instructor_id")
+    private List<InstructorEntity> instructorEntityList;
 }

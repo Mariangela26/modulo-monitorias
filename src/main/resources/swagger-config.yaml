@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Microservicio store-stock de tienda-pragma
+  description: |-
+    Este modulo maneja los procesos del modulo de monitorias de la universidad Simón Bolivar
+  version: 1.0.0
+servers:
+- url: https://monitoring.module/v1
+paths:
+  /seat:
+    post:
+      tags:
+      - Post course
+      summary: Inserta la información de un nuevo curso a la BD
+      responses:
+        '201':
+          description: OK
+  /seat/{seatId}:
+    get:
+      tags: 
+      - Get a seat
+      summary: Obtiene la informacion de un curso en especifico
+      parameters: 
+        - name: courseId
+          in: path
+          description: Id del curso a obtener
+          required: true
+          schema: 
+            type: string
+      responses:
+        '201':
+          description: OK
+    put:
+      tags: 
+      - Put a course
+      summary: Actualiza la informacion de un curso en especifico
+      parameters: 
+        - name: courseId
+          in: path
+          description: Id del curso a actualizar
+          required: true
+          schema: 
+            type: string
+      responses:
+        '204':
+          description: Course updated
+    delete:
+      tags: 
+      - Delete a course
+      summary: Elimina la informacion de una sede en especifico
+      parameters: 
+        - name: seatId
+          in: path
+          description: Id de la sede a eliminar
+          required: true
+          schema: 
+            type: string
+      responses:
+        '204':
+          description: Course deleted
+  /supply:
+    post:
+      tags:
+      - Post instructor
+      summary: Inserta la información de un nuevo monitor a la BD
+      responses:
+        '201':
+          description: OK
+    get:
+      tags:
+      - Get instructors
+      summary: Obtiene la informacion de todos los monitores
+      responses:
+        '201':
+          description: OK
+  /supply/{supplyId}:
+    get:
+      tags: 
+      - Get a instructor
+      summary: Obtiene la informacion de un monitor en especifico
+      parameters: 
+        - name: instructorId
+          in: path
+          description: Id del monitor a obtener
+          required: true
+          schema: 
+            type: string
+      responses:
+        '201':
+          description: OK
+          
+  /productSupply/{productSupplyId}:
+    get:
+      tags: 
+      - Get a product supply
+      summary: Obtiene la informacion de un producto_abastecimiento en especifico
+      parameters: 
+        - name: productSupplyId
+          in: path
+          description: Id del producto_abastecimiento a obtener
+          required: true
+          schema: 
+            type: string
+      responses:
+        '201':
+          description: OK
+  

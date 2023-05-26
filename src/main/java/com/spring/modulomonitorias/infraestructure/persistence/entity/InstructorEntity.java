@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name="instructor")
 @NoArgsConstructor
@@ -18,6 +20,15 @@ public class InstructorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private Schedule schedule;
+    String name;
+    //Schedule schedule;
+
+    //@ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(name = "schedule_id")
+    private ScheduleEntity scheduleEntity;
+
+    @OneToMany(mappedBy = "instructor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    //@JoinColumn(name = "courseId")
+    private List<CourseEntity> courseEntityList;
 }

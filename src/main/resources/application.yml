@@ -1,0 +1,6 @@
+spring:
+  application:
+#aqui se hace el cambio por el nombre del micro.
+    name: monitoring-module
+  profiles:
+    active: dev

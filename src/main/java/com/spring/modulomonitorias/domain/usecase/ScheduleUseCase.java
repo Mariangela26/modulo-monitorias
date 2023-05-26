@@ -16,21 +16,25 @@ public class ScheduleUseCase implements IScheduleServicePort {
 
     @Override
     public Schedule saveSchedule(Schedule schedule) {
-        return null;
+
+        return schedulePersistencePort.saveSchedule(schedule);
     }
 
     @Override
     public List<Schedule> getAllSchedule() {
-        return null;
+
+        return schedulePersistencePort.getAllSchedule();
     }
 
     @Override
     public void updateSchedule(Schedule schedule) {
 
+        schedulePersistencePort.updateSchedule(schedule);
     }
 
     @Override
     public void deleteSchedule(Long scheduleId) {
 
+        schedulePersistencePort.deleteSchedule(scheduleId);
     }
 }
