@@ -28,7 +28,7 @@ public class InstructorEntity {
     @JoinColumn(name = "schedule_id")
     private ScheduleEntity scheduleEntity;
 
-    @OneToMany(mappedBy = "instructor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "instructorEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     //@JoinColumn(name = "courseId")
     private List<CourseEntity> courseEntityList;
 }

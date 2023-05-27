@@ -20,7 +20,7 @@ public class CourseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     String name;
-    Instructor instructor;
+    //Instructor instructor; ESTE ERA EL ERROR
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "instructor_id")

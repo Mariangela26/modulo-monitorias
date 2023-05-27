@@ -19,12 +19,12 @@ public class ScheduleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String day;
-    private String startTime;
-    private String endTime;
-    private String place;
+    String dayDate;
+    String startTime;
+    String endTime;
+    String place;
 
-    @OneToMany
-    @JoinColumn(name = "instructor_id")
+    @OneToMany(mappedBy = "scheduleEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    //@JoinColumn(name = "instructor_id")
     private List<InstructorEntity> instructorEntityList;
 }
