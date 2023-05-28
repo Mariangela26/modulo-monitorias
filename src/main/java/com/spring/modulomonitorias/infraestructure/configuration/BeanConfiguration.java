@@ -34,7 +34,6 @@ public class BeanConfiguration {
     private final InstructorEntityMapper instructorEntityMapper;
     private final ScheduleEntityMapper scheduleEntityMapper;
 
-    //TODO: validar si se necesita bean para los serviceport
     @Bean
     public ICoursePersistencePort coursePersistencePort(){
         return new CourseJpaAdapter(courseRepository, courseEntityMapper);

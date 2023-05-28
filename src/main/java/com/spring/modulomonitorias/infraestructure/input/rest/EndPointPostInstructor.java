@@ -1,7 +1,7 @@
-package com.spring.modulomonitorias.infraestructure.input;
+package com.spring.modulomonitorias.infraestructure.input.rest;
 
-import com.spring.modulomonitorias.application.dto.CourseRequest;
-import com.spring.modulomonitorias.application.handler.ICourseHandler;
+import com.spring.modulomonitorias.application.dto.InstructorRequest;
+import com.spring.modulomonitorias.application.handler.IInstructorHandler;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -15,20 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/course")
+@RequestMapping("/instructor")
 @RequiredArgsConstructor
-public class EndPointPostCourse {
+public class EndPointPostInstructor {
 
-    private final ICourseHandler courseHandler;
+    private final IInstructorHandler instructorHandler;
 
-    @Operation(summary = "Add a new course")
+    @Operation(summary = "Add a new instructor")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Course created", content = @Content),
-            @ApiResponse(responseCode = "409", description = "Course already exists", content = @Content)
+            @ApiResponse(responseCode = "201", description = "Instructor created", content = @Content),
+            @ApiResponse(responseCode = "409", description = "Instructor already exists", content = @Content)
     })
     @PostMapping("/")
-    public ResponseEntity<Void> saveCourse(@RequestBody CourseRequest courseRequest){
-        courseHandler.saveCourse(courseRequest);
+    public ResponseEntity<Void> saveInstructor(@RequestBody InstructorRequest instructorRequest){
+        instructorHandler.saveInstructor(instructorRequest);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

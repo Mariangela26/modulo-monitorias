@@ -1,7 +1,7 @@
-package com.spring.modulomonitorias.infraestructure.input;
+package com.spring.modulomonitorias.infraestructure.input.rest;
 
-import com.spring.modulomonitorias.application.dto.CourseResponse;
-import com.spring.modulomonitorias.application.handler.ICourseHandler;
+import com.spring.modulomonitorias.application.dto.ScheduleResponse;
+import com.spring.modulomonitorias.application.handler.IScheduleHandler;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,20 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/course")
+@RequestMapping("/schedule")
 @RequiredArgsConstructor
-public class EndPointGetAllCourse {
+public class EndPointGetAllSchedule {
 
-    private final ICourseHandler courseHandler;
+    private final IScheduleHandler scheduleHandler;
+
     @Operation(summary = "Get all the schedules")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "All schedules returned",
                     content = @Content(mediaType = "application/json",
-                            array = @ArraySchema(schema = @Schema(implementation = CourseResponse.class)))),
+                            array = @ArraySchema(schema = @Schema(implementation = ScheduleResponse.class)))),
             @ApiResponse(responseCode = "404", description = "No data found", content = @Content)
     })
     @GetMapping("/")
-    public ResponseEntity<List<CourseResponse>> getAllCourse(){
-        return ResponseEntity.ok(courseHandler.getAllCourse());
+    public ResponseEntity<List<ScheduleResponse>> getAllSchedule(){
+        return ResponseEntity.ok(scheduleHandler.getAllSchedule());
     }
 }

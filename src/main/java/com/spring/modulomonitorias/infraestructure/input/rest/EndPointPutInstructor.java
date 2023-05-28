@@ -1,4 +1,4 @@
-package com.spring.modulomonitorias.infraestructure.input;
+package com.spring.modulomonitorias.infraestructure.input.rest;
 
 import com.spring.modulomonitorias.application.dto.InstructorRequest;
 import com.spring.modulomonitorias.application.handler.IInstructorHandler;
@@ -23,10 +23,10 @@ public class EndPointPutInstructor {
             @ApiResponse(responseCode = "204", description = "Instructor updated", content = @Content),
             @ApiResponse(responseCode = "404", description = "Instructor not found", content = @Content)
     })
-    @PutMapping("/{seatId}")
+    @PutMapping("/{instructorId}")
     public ResponseEntity<Void> updateInstructor(@RequestBody InstructorRequest instructorRequest,
-                                           @Parameter(description = "Id of the seat to be modified")
-                                           @PathVariable(name = "seatId")Long instructorId){
+                                           @Parameter(description = "Id of the instructor to be modified")
+                                           @PathVariable(name = "instructorId")Long instructorId){
         instructorHandler.updateInstructor(instructorRequest, instructorId);
         return ResponseEntity.noContent().build();
     }

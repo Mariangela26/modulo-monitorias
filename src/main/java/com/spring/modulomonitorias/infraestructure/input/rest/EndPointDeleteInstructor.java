@@ -1,4 +1,4 @@
-package com.spring.modulomonitorias.infraestructure.input;
+package com.spring.modulomonitorias.infraestructure.input.rest;
 
 import com.spring.modulomonitorias.application.handler.IInstructorHandler;
 import io.swagger.v3.oas.annotations.Operation;
@@ -19,7 +19,7 @@ public class EndPointDeleteInstructor {
 
     private final IInstructorHandler instructorHandler;
 
-    @Operation(summary = "Delete a instructor by their Id")
+    @Operation(summary = "Delete a instructor by its Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Instructor deleted", content = @Content),
             @ApiResponse(responseCode = "400", description = "Instructor not found", content = @Content)

@@ -1,7 +1,7 @@
-package com.spring.modulomonitorias.infraestructure.input;
+package com.spring.modulomonitorias.infraestructure.input.rest;
 
-import com.spring.modulomonitorias.application.dto.InstructorResponse;
-import com.spring.modulomonitorias.application.handler.IInstructorHandler;
+import com.spring.modulomonitorias.application.dto.CourseResponse;
+import com.spring.modulomonitorias.application.handler.ICourseHandler;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,21 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/instructor")
+@RequestMapping("/course")
 @RequiredArgsConstructor
-public class EndPointGetAllInstructor {
+public class EndPointGetAllCourse {
 
-    private final IInstructorHandler instructorHandler;
-
-    @Operation(summary = "Get all the instructors")
+    private final ICourseHandler courseHandler;
+    @Operation(summary = "Get courses")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "All instructors returned",
+            @ApiResponse(responseCode = "200", description = "All schedules returned",
                     content = @Content(mediaType = "application/json",
-                            array = @ArraySchema(schema = @Schema(implementation = InstructorResponse.class)))),
+                            array = @ArraySchema(schema = @Schema(implementation = CourseResponse.class)))),
             @ApiResponse(responseCode = "404", description = "No data found", content = @Content)
     })
     @GetMapping("/")
-    public ResponseEntity<List<InstructorResponse>> getAllInstructor(){
-        return ResponseEntity.ok(instructorHandler.getAllInstructor());
+    public ResponseEntity<List<CourseResponse>> getAllCourse(){
+        return ResponseEntity.ok(courseHandler.getAllCourse());
     }
 }

@@ -1,4 +1,4 @@
-package com.spring.modulomonitorias.infraestructure.input;
+package com.spring.modulomonitorias.infraestructure.input.rest;
 
 import com.spring.modulomonitorias.application.dto.InstructorResponse;
 import com.spring.modulomonitorias.application.handler.IInstructorHandler;

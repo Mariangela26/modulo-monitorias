@@ -1,4 +1,4 @@
-package com.spring.modulomonitorias.infraestructure.input;
+package com.spring.modulomonitorias.infraestructure.input.rest;
 
 import com.spring.modulomonitorias.application.handler.IScheduleHandler;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EndPointDeleteSchedule {
 
     private final IScheduleHandler scheduleHandler;
-    @Operation(summary = "Delete a schedule by their Id")
+    @Operation(summary = "Delete a schedule by its Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Schedule deleted", content = @Content),
             @ApiResponse(responseCode = "400", description = "Schedule not found", content = @Content)

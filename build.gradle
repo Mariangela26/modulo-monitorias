@@ -2,6 +2,8 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.0'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id 'application'
+	id 'jacoco'
 }
 
 group = 'com.spring'
@@ -22,6 +24,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.h2database:h2:2.1.214'
 	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -30,15 +34,22 @@ dependencies {
 
 	implementation "io.springfox:springfox-boot-starter:3.0.0"
 	compileOnly "io.springfox:springfox-swagger-ui:3.0.0"
+
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.1'
 	implementation 'org.springframework.boot:spring-boot-starter-validation:2.7.1'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.7.1'
 
-	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
-	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
-	implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.1'
+	//runtimeOnly 'com.h2database:h2:2.1.214'
+
+	//implementation 'org.springframework.boot:spring-boot-starter-security:2.7.1'
+
+	//implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	//implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+	//implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+

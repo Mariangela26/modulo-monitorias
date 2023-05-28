@@ -1,4 +1,4 @@
-package com.spring.modulomonitorias.infraestructure.input;
+package com.spring.modulomonitorias.infraestructure.input.rest;
 
 import com.spring.modulomonitorias.application.handler.ICourseHandler;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ public class EndPointDeleteCourse {
 
     private final ICourseHandler courseHandler;
 
-    @Operation(summary = "Delete a course their Id")
+    @Operation(summary = "Delete a course by its Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Course deleted", content = @Content),
             @ApiResponse(responseCode = "400", description = "Course not found", content = @Content)
